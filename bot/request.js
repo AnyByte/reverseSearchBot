@@ -19,7 +19,7 @@ const tools = require("../tools/tools.js");
 const analytics = require('./analytics.js');
 const idButtonName = SETTINGS.id_buttonName;
 let proxy = {idx:0, lastReqTime:0, agent:null, 
-  torAgent: new socksProxyAgent("socks5://127.0.0.1:9100")};
+  torAgent: new socksProxyAgent("socks5://torproxy:9050")};
 let bot;
 
 const changeProxy = () => {
@@ -90,8 +90,8 @@ const myFetch = (url, editMsg, options) => {
   if (options == null)
     options = {};
   if (url.indexOf("saucenao") > -1) //saucenao always goes through tor
-    // options.agent = proxy.torAgent; disable tor proxy for my configuration
-    options.agent = proxy.agent;
+    options.agent = proxy.torAgent; // disable tor proxy for my configuration
+    // options.agent = proxy.agent;
   else
     options.agent = proxy.agent;
 
@@ -185,7 +185,7 @@ module.exports = {
   fetchSauceNao: (url, editMsg) => {
     const params = urlbase.sauceNaoParams;
     params.url = url;
-    params.api_key = SETTINGS.private.SNKey;
+    // params.api_key = SETTINGS.private.SNKey;
     const uurl = urlbase.sauceNao + tools.json2query(params);
     
     return myFetch(uurl, editMsg, { params: params });
