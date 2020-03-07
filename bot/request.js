@@ -90,7 +90,8 @@ const myFetch = (url, editMsg, options) => {
   if (options == null)
     options = {};
   if (url.indexOf("saucenao") > -1) //saucenao always goes through tor
-    options.agent = proxy.torAgent;
+    // options.agent = proxy.torAgent; disable tor proxy for my configuration
+    options.agent = proxy.agent;
   else
     options.agent = proxy.agent;
 
