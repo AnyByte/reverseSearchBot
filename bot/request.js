@@ -185,7 +185,7 @@ module.exports = {
   fetchSauceNao: (url, editMsg) => {
     const params = urlbase.sauceNaoParams;
     params.url = url;
-    // params.api_key = SETTINGS.private.SNKey;
+    params.api_key = SETTINGS.private.SNKey;
     const uurl = urlbase.sauceNao + tools.json2query(params);
     
     return myFetch(uurl, editMsg, { params: params });
