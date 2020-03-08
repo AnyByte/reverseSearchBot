@@ -99,7 +99,7 @@ let settings = {
     reportFile: {on: false, notify: false}
   },
   keywords: /^(sauce|source|what\?)$/i,
-  commands: ['sauce', 'source', 'sauce@reverseSearchBot', 'source@reverseSearchBot'],
+  commands: ['sauce', 'source', 'sauce@reverseSearch2Bot', 'source@reverseSearch2Bot'],
   // keywords: ['sauce', 'source', 'what?'],
   private: privateSettings,
   userAgents: [
