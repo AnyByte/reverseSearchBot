@@ -90,8 +90,8 @@ let settings = {
   },
   floodProtect: {
     message: "aaaaah, slow down...",
-    interval: 15,
-    msgLimit: 3
+    interval: 5,
+    msgLimit: 10
   },
   reportToOwnerSwitch: {
     reportLimitsOfSaucenao: {on: true, notify: true},
