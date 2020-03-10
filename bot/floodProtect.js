@@ -27,7 +27,7 @@ module.exports = (ctx) => {
   }
   if (diffSecs < intervalSecs){
     if (user.numMsgs > msgLimit) {
-      ctx.reply(warnMsg);
+      // ctx.reply(warnMsg);
       return true; //flooding
     }
     else
