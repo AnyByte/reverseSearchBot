@@ -90,7 +90,7 @@ let settings = {
   },
   floodProtect: {
     message: "aaaaah, slow down...",
-    interval: 5,
+    interval: 3,
     msgLimit: 20
   },
   reportToOwnerSwitch: {
